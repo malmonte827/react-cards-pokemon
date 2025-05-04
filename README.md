@@ -1,68 +1,129 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 📇 React Cards & Pokémon
 
-## Available Scripts
+> A React app that fetches and displays playing cards and Pokémon cards, refactored to use two custom hooks—`useFlip` for card‐flip logic and `useAxios` for data fetching and state management.
 
-In the project directory, you can run:
+ [![React](https://img.shields.io/badge/react-18%2B-blue)](https://reactjs.org/) [![Axios](https://img.shields.io/badge/axios-0.27%2B-brightgreen)](https://github.com/axios/axios)
 
-### `npm start`
+---
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 📋 Table of Contents
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+1. [About](#about)  
+2. [Features](#features)  
+3. [Tech Stack](#tech-stack)  
+4. [Getting Started](#getting-started)  
+   - [Prerequisites](#prerequisites)  
+   - [Installation](#installation)  
+5. [Usage](#usage)  
+6. [Custom Hooks](#custom-hooks)  
+8. [Contributing](#contributing)  
+10. [Contact](#contact)  
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🌟 About
 
-### `npm run build`
+This assignment refactors a React app that displays:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Playing cards** drawn from the [Deck of Cards API](https://deckofcardsapi.com/).  
+- **Pokémon cards** fetched from the [PokéAPI](https://pokeapi.co/).
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ✨ Features
 
-### `npm run eject`
+- **Draw Playing Cards:** Click “Draw Card” to fetch and display a new card image.  
+- **Browse Pokémon:** Click “Add Pokémon” to fetch a random Pokémon and display its image, name, and type.  
+- **Flip Cards:** Click any card to flip it over using shared `useFlip` logic.  
+- **Persistent State:** Cards you draw remain on screen until you clear them.  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠 Tech Stack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Library:** React 18+  
+- **Data Fetching:** Axios  
+- **APIs:** Deck of Cards API, PokéAPI  
+- **Build Tool:** Create React App (or Vite if preferred)  
+- **Styling:** CSS  
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## 🏁 Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prerequisites
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Node.js v14 or higher  
+- npm (bundled with Node.js) or Yarn  
 
-### Code Splitting
+### Installation
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```bash
+# 1. Clone the repo
+git clone https://github.com/malmonte827/react-cards-pokemon.git
+cd react-cards-pokemon
 
-### Analyzing the Bundle Size
+# 2. Install dependencies
+npm install
+# or
+yarn
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+# 3. Start the dev server
+npm start
+# or
+yarn start
+```
+---
+### 📖 Usage
 
-### Making a Progressive Web App
+1. Draw Playing Card
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+   - Click the “Draw Card” button to fetch and display a new card from the deck.
 
-### Advanced Configuration
+2. Add Pokémon
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+   - Click “Add Pokémon” to fetch a random Pokémon’s data (name, image, type).
 
-### Deployment
+3. Flip Cards
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+   - Click on any displayed playing card or Pokémon card to flip it face down/up.
 
-### `npm run build` fails to minify
+4. Clear Cards
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+   - Use “Clear Cards” buttons in each section to reset that collection.
+---
+### Custom Hooks
+useFlip
+
+  - Encapsulates flip state (isFlipped) and a toggleFlip() function.
+
+  - Used by both PlayingCard and PokemonCard components.
+
+useAxios
+
+   - Takes a base URL and returns [ dataArray, addData ].
+
+   - addData performs an Axios request (optionally appending to the URL) and pushes the result into dataArray state.
+
+   - Used in PlayingCardList and PokeDex to handle all AJAX logic.
+---
+
+## Contributing
+
+We welcome contributions! To contribute:
+
+- Fork the repository
+
+- Create a new branch (git checkout -b feature-name)
+
+- Commit your changes (git commit -m 'Add new feature')
+
+- Push to the branch (git push origin feature-name)
+
+- Open a pull request
+
+## Contact
+
+For questions or suggestions, reach out:
+
+- Email: malmonte827@gmail.com
